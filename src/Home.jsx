@@ -32,6 +32,7 @@ const Home = () => {
   const addData = (newItem) => {
     setData((prevItem) => [...prevItem, newItem]);
   };
+
   const removeHandle = (update) => {
     setData(update);
   };
@@ -65,7 +66,7 @@ const Home = () => {
         <User isAdmin={false} data={data} removeHandle={removeHandle} />
       )}
       {display == "admin" && (
-        <Admin isAdmin={true} data={data} addData={addData} />
+        <Admin isAdmin={true} data={data} addData={addData} removeHandle={removeHandle}/>
       )}
     </Layout>
   );

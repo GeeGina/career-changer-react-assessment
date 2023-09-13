@@ -5,7 +5,6 @@ const User = ({ isAdmin, data , removeHandle }) => {
   const deleteItem =(id) =>{
     const updateData = data.filter((item) => item.id !== id)
     removeHandle(updateData)
-    
   }
   return (
     <>

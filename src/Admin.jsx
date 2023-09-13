@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import User from "./User";
 
-const Admin = ({ isAdmin, data, addData }) => {
+const Admin = ({ isAdmin, data, addData , removeHandle}) => {
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [position, setPosition] = useState("");
@@ -59,7 +59,7 @@ const Admin = ({ isAdmin, data, addData }) => {
           Save
         </button>
       </form>
-      <User isAdmin={isAdmin} data={data} />
+      <User isAdmin={isAdmin} data={data} removeHandle={removeHandle} />
     </>
   );
 };
