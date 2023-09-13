@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "./Layout";
 import User from "./User";
 import Admin from "./Admin";
@@ -28,6 +28,7 @@ const Home = () => {
   const [display, setDisplay] = useState();
   const [topic, setTopic] = useState("React - Assessment");
   const [data, setData] = useState(mockEmployees);
+  
 
   const addData = (newItem) => {
     setData((prevItem) => [...prevItem, newItem]);
