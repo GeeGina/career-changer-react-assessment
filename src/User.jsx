@@ -4,25 +4,29 @@ import "./style.css";
 const User = ({ isAdmin, data }) => {
   return (
     <>
-      <table>
+      <table className="dataTable">
+        <thead>
         <tr>
           <th>Name</th>
           <th>Last Name</th>
           <th>Position</th>
           {isAdmin && <th>Action</th>}
         </tr>
+        </thead>
         {data.map((member) => {
           return (
-            <tr key={member.id}>
+            <tbody key={member.id}>
+            <tr>
               <td>{member.name}</td>
               <td>{member.lastname}</td>
               <td>{member.position}</td>
               {isAdmin && (
-                <th>
-                  <button>Delete</button>
-                </th>
+                <td>
+                  <button className="delete">Delete</button>
+                </td>
               )}
             </tr>
+            </tbody>
           );
         })}
       </table>

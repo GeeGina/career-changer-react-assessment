@@ -25,15 +25,19 @@ const mockEmployees = [
 ]
 
 const Home = () => {
-  const [display,setDisplay] = useState("reset")
+  const [display,setDisplay] = useState()
+  const [topic,setTopic] = useState("React - Assessment")
+  const [data,setData] = useState(mockEmployees)
+  const addData = (newItem) =>{
+    setData((prevItem)=>[...prevItem,newItem])
+  }
   return(
     <Layout>
-      <h1>Generation Thailand</h1>
-      <h2>React - Assessment</h2>
-      <button onClick={()=>setDisplay("user")}>User Home Sector</button>
-      <button onClick={()=>setDisplay("admin")}>Admin Home Sector</button>
-      {display == "user" && <User isAdmin={false} data={mockEmployees}/>}
-      {display =="admin" && <Admin isAdmin={true} data={mockEmployees}/>}
+      <h1>Generation Thailand<br/>{topic}</h1>
+      <button className="btnDisplay" onClick={()=>{setDisplay("user");setTopic("Home - User Sector")}} >User Home Sector</button>
+      <button className="btnDisplay" onClick={()=>{setDisplay("admin");setTopic("Home - Admin Sector")}}>Admin Home Sector</button>
+      {display == "user" && <User isAdmin={false} data={data}/>}
+      {display =="admin" && <Admin isAdmin={true} data={data} addData={addData}/>}
     </Layout>
   )
 }
