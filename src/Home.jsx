@@ -1,3 +1,8 @@
+import { useState } from 'react'
+import Layout from './Layout'
+import User from './User'
+import Admin from './Admin'
+
 const mockEmployees = [
   {
     id: 0,
@@ -20,11 +25,16 @@ const mockEmployees = [
 ]
 
 const Home = () => {
-
-  return (
-    <div>
-
-    </div>
+  const [display,setDisplay] = useState("reset")
+  return(
+    <Layout>
+      <h1>Generation Thailand</h1>
+      <h2>React - Assessment</h2>
+      <button onClick={()=>setDisplay("user")}>User Home Sector</button>
+      <button onClick={()=>setDisplay("admin")}>Admin Home Sector</button>
+      {display == "user" && <User isAdmin={false} data={mockEmployees}/>}
+      {display =="admin" && <Admin isAdmin={true} data={mockEmployees}/>}
+    </Layout>
   )
 }
 
