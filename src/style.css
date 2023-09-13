@@ -62,12 +62,15 @@ input{
   
 }
 .delete{
-  color: #fef6e4;
-  background-color: #001858;
+  /* color: #fef6e4; */
+  background-color: #c3f0ca;
 }
 .save{
   color: #fef6e4;
   background-color: #594a4e;
   margin: 6px;
   padding: 4px 6px;
+}
+:disabled{
+  background-color: darkgrey;
 }

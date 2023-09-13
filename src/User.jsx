@@ -2,6 +2,9 @@ import React from "react";
 import "./style.css";
 
 const User = ({ isAdmin, data }) => {
+  const deleteItem =() =>{
+    
+  }
   return (
     <>
       <table className="dataTable">
@@ -22,7 +25,7 @@ const User = ({ isAdmin, data }) => {
               <td>{member.position}</td>
               {isAdmin && (
                 <td>
-                  <button className="delete">Delete</button>
+                  <button className="delete" onClick={deleteItem}>Delete</button>
                 </td>
               )}
             </tr>
